@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+
+	<title>nanowasp</title>
+
+	<style>
+
+	html, body, #body {
+		margin: 0;
+		border: 0;
+		width:100%;
+		height:100%;
+	}
+
+	#body.imageOne {
+			background-image: url("img/lightinvaders_final.gif");
+			background-color: black;
+			background-size: 439px 439px;
+			background-attachment: fixed;
+			background-position: center;
+			width: auto;
+			background-repeat: repeat;
+			max-width: 150%;
+			margin: 0;
+			border: 0;
+	}
+	#body.imageOne img {max-width: 0;}
+
+	#body.imageTwo {
+		position:fixed;
+		top:0%;
+		left:0%;
+		width:100%;
+		height:100%;
+	}
+
+	#body.imageTwo img {
+		background-color: black;
+		position:absolute;
+		background-repeat: no-repeat;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:auto;
+		min-width:100%;
+		min-height:100%;
+		max-width:100%;
+		max-height:100%;
+	}
+
+	/*body {
+    background: black url("img/lightinvaders_final.gif");
+	}*/
+		#page { position: absolute; top: 50%; left: 50%; width: 90%;}
+
+		#page.imageTwo { transform: translate(-50%, -60%); z-index: 2; width: 100%; text-align: center; margin: 0px auto; padding: 0px; background: transparent;
+			font: 8vh Tahoma, Geneva, sans-serif; margin: 0 0 0 0; text-indent: 0px; color: #585e5e; -webkit-text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;text-size-adjust:none;
+		}
+
+		#page.imageOne { z-index: 2; text-align: center; align-items: center; transform: translate(-47.5%, -57.25%);
+			font: 25vw Tahoma, Geneva, sans-serif; line-height: 0.9;  letter-spacing: 6vw; text-justify: inter-word;
+			margin: 0 0 0 0; text-indent: 0px; color: #F5F5F5; opacity: 0.2;
+			-webkit-text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;text-size-adjust:none;
+		}
+
+
+		/*p { font: 8vh Tahoma, Geneva, sans-serif; margin: 0 0 0 0; text-indent: 0px; color: #585e5e; -webkit-text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;text-size-adjust:none;}*/
+
+
+	</style>
+
+
+</head>
+
+<body>
+
+	<div id="page" class="imageOne">
+		<b id="boldStuff">nano</br>wasp</b>
+	</div>
+
+	<div id="body" class="imageOne"><img src="img/lift_desktop.gif" alt=""></div>
+
+	<script>
+		var bodyObj, className, index;
+
+		bodyObj = document.getElementById('body');
+		pageObj = document.getElementById('page');
+		index = 1;
+		className = [
+		    'imageOne',
+		    'imageTwo'
+		];
+
+		function updateIndex(){
+		    if(index === 0){
+						document.getElementById('boldStuff').innerHTML = 'nano</br>wasp';
+		        index = 1;
+		    }else{
+						document.getElementById('boldStuff').innerHTML = 'nanowasp';
+		        index = 0;
+		    }
+		}
+
+		// $('#page-wrap').onclick = function() {
+		//     $('#body').className = className[index];
+		// });
+
+		bodyObj.onclick = function(){
+		    bodyObj.className = className[index];
+				pageObj.className = className[index];
+	    updateIndex();
+		}
+		pageObj.onclick = function(){
+				bodyObj.className = className[index];
+				pageObj.className = className[index];
+			updateIndex();
+		}
+
+
+	</script>
+
+
+</body>
+
+</html>
